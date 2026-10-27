@@ -13,10 +13,13 @@ window.SITE_CONFIG = {
   YOUTUBE_VIDEO_ID: "SafUp0nY31A",
   VIDEO_TITLE: "Next Lever: Find what's costing you money",
 
+  // Booked page video (30-second clip, unlisted YouTube ID). Leave as REPLACE_BOOKED_VIDEO_ID until it exists.
+  BOOKED_VIDEO_ID: "REPLACE_BOOKED_VIDEO_ID",
+
   // Formspree FREE tier endpoints. Create 2 forms at formspree.io, paste the full URLs.
   // PLACEHOLDER: forms refuse to submit (and say so) until these are replaced.
   FORMSPREE_LEAD_URL: "https://formspree.io/f/xoeedype",   // step 1 form on index.html
-  FORMSPREE_PREP_URL: "https://formspree.io/f/mgaakrpk",   // prep.html (5 questions)
+  FORMSPREE_PREP_URL: "https://formspree.io/f/mgaakrpk",   // booked.html (6 questions)
 
   // Booking calendar shown on thank-you.html.
   // Google Calendar appointment schedule: Calendar > open the schedule > Share >

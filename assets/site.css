@@ -158,3 +158,9 @@ footer .flinks a:hover,footer .flinks a:focus{color:#fff}
 /* v19 merged hero: intro on top, then video */
 .hero .hero-intro{border-top:0;margin-top:0;padding-top:0;margin-bottom:22px}
 .hero .vsl-top{padding-top:0}
+
+/* v20 booked page + select */
+.field select{width:100%;font:inherit;padding:12px;border:1px solid #bbb;border-radius:6px;background:#fff;color:var(--ink)}
+.booked-slot{display:flex;align-items:center;justify-content:center;text-align:center;background:#0b1220;border:2px dashed #475569}
+.booked-slot .slot-ph{color:#fff;padding:24px;font-size:1.15rem;line-height:1.4}
+@media(min-width:640px){.booked-slot .slot-ph{font-size:1.5rem}}

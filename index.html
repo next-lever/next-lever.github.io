@@ -103,7 +103,7 @@
   <div class="wrap">
     <div class="stepper" aria-label="Two steps"><span class="on">Step 1: tell me where to look</span><span class="off">Step 2: pick a time</span></div>
     <h2>Book your free 15-minute audit</h2>
-    <p>One question, about a minute. Then you pick a time that works.</p>
+    <p>Five quick fields, about a minute. Then you pick a time that works.</p>
 
     <div class="formcard">
     <form id="lead-form" name="audit-request" method="POST" action="https://formspree.io/f/xoeedype" accept-charset="UTF-8"
@@ -117,7 +117,10 @@
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
       </div>
 
-      <div class="field"><label for="doubled">If your leads doubled tomorrow, what breaks?</label><textarea class="q" id="doubled" name="leads_doubled_what_breaks" placeholder="Your best guess is fine" required></textarea></div>
+      <div class="field"><label for="industry">Industry</label><select id="industry" name="industry" required>
+        <option value="" selected disabled>Choose one</option>
+        <option>Credit repair</option><option>Lending</option><option>Bookkeeping / tax</option><option>Marketing agency</option><option>Coaching / consulting</option><option>Recruiting</option><option>Property management</option><option>Real estate</option><option>Car service</option><option>Other</option>
+      </select></div>
 
       <div class="hp" aria-hidden="true">
         <label for="_gotcha">Leave this field empty</label>

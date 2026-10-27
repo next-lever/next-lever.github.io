@@ -41,12 +41,19 @@
     }
   }
 
-  // 4. Absolute prep link text on thank-you page
-  [].forEach.call(document.querySelectorAll("[data-prep-url]"), function (el) {
-    var u = (C.SITE_ORIGIN || "") + "/prep";
-    el.textContent = u.replace(/^https?:\/\//, "");
-    if (el.tagName === "A") el.href = "prep.html";
-  });
+  // 4. Booked page video slot (placeholder until BOOKED_VIDEO_ID is set)
+  var bv = document.getElementById("booked-video");
+  if (bv && C.BOOKED_VIDEO_ID && !isPlaceholder(C.BOOKED_VIDEO_ID)) {
+    bv.innerHTML = "";
+    var bs = document.getElementById("booked-video-section"); if (bs) bs.hidden = false;
+    var bf = document.createElement("iframe");
+    bf.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(C.BOOKED_VIDEO_ID) + "?rel=0&modestbranding=1&playsinline=1";
+    bf.title = "You're booked";
+    bf.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    bf.setAttribute("allowfullscreen", "");
+    bf.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+    bv.appendChild(bf);
+  }
 
   // 5. Forms: AJAX to Formspree (works on the free tier; free tier has NO custom redirect, so we redirect in JS)
   [].forEach.call(document.querySelectorAll("form[data-endpoint]"), function (form) {
@@ -71,7 +78,7 @@
       var subjField = form.querySelector("[name=_subject]");
       var tpl = form.getAttribute("data-subject");
       var src = form.querySelector("[name=" + (form.getAttribute("data-subject-field") || "business") + "]");
-      if (subjField && tpl) subjField.value = tpl.replace(/\{(business|name)\}/g, (src && src.value.trim()) || "(not given)");
+      if (subjField && tpl) subjField.value = tpl.replace(/\{(business|name|email)\}/g, (src && src.value.trim()) || "(not given)");
 
       var data = new FormData(form);
       if (btn) { btn.disabled = true; btn.setAttribute("data-label", btn.textContent); btn.textContent = "Sending..."; }

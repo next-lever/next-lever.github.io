@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're booked | Next Lever</title>
+<meta name="description" content="You're booked. Answer a few questions so Michael comes prepared.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://nextleverhq.com/booked.html">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/config.js"></script>
+</head>
+<body>
+<main>
+<section class="page-hero"><div class="wrap">
+  <a href="index.html"><img class="logo" src="assets/logo.jpg" alt="Next Lever" width="64" height="64"></a>
+  <h1>You're booked. Answer these so I come prepared.</h1>
+</div></section>
+<section id="booked-video-section" hidden><div class="wrap wide">
+  <div class="vsl" style="margin-bottom:8px"><div class="vsl-frame booked-slot" id="booked-video"></div></div>
+</div></section>
+<section class="alt"><div class="wrap">
+  <div class="formcard" style="margin-top:0">
+    <form id="booked-form" name="booked" method="POST" action="https://formspree.io/f/mgaakrpk" accept-charset="UTF-8"
+          data-endpoint="FORMSPREE_PREP_URL" data-next="booked-thanks.html" data-subject="Booked answers: {email}" data-subject-field="email">
+      <input type="hidden" name="_subject" value="Booked answers">
+      <input type="hidden" name="source" value="nextleverhq.com booked page">
+      <div class="grid" style="grid-template-columns:1fr">
+        <div class="field"><label for="email">Email (use the one you booked with)</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field"><label for="what_you_sell">1. What do you sell, and roughly what does it do a month?</label><textarea class="q" id="what_you_sell" name="what_you_sell" placeholder="Your offer, and a rough monthly revenue number." required></textarea></div>
+      <div class="field"><label for="best_customer">2. Who&#x27;s your best customer?</label><textarea class="q" id="best_customer" name="best_customer" placeholder="The kind of client you&#x27;d clone if you could." required></textarea></div>
+      <div class="field"><label for="how_found">3. How do customers find you? (rough % by channel)</label><textarea class="q" id="how_found" name="how_found" placeholder="For example: 50% referrals, 30% ads, 20% content." required></textarea></div>
+      <div class="field"><label for="close_rate">4. What % of quotes or consults do you close?</label><textarea class="q" id="close_rate" name="close_rate" placeholder="A rough number is fine." required></textarea></div>
+      <div class="field"><label for="who_touches">5. Who touches each step?</label><textarea class="q" id="who_touches" name="who_touches" placeholder="Quote, follow-up, scheduling, delivery, invoice, review ask. Name the person or &quot;me&quot; for each." required></textarea></div>
+      <div class="field"><label for="price_last_raised">6. What&#x27;s your price, and when did you last raise it?</label><textarea class="q" id="price_last_raised" name="price_last_raised" placeholder="" required></textarea></div>
+      <div class="hp" aria-hidden="true">
+        <label for="_gotcha">Leave this field empty</label>
+        <input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="btn" type="submit">Send my answers</button>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="legal">Used only to prepare your audit. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    </form>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© Next Lever
+  <div class="flinks"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; SMS Terms</a><a href="index.html">Home</a></div>
+</div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
