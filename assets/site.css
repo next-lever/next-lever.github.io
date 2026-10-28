@@ -164,10 +164,5 @@ footer .flinks a:hover,footer .flinks a:focus{color:#fff}
 .booked-slot{display:flex;align-items:center;justify-content:center;text-align:center;background:#0b1220;border:2px dashed #475569}
 .booked-slot .slot-ph{color:#fff;padding:24px;font-size:1.15rem;line-height:1.4}
 @media(min-width:640px){.booked-slot .slot-ph{font-size:1.5rem}}
-/* v21 mobile hero (phones only; desktop unchanged) */
-.hero .mobile-tagline{display:none}
-@media(max-width:639px){
-  .hero .logo{width:40px;height:40px;margin:0 auto 8px}
-  .hero .hero-intro .tag{display:none}
-  .hero .mobile-tagline{display:block;color:#94a3b8;font-size:.78rem;font-weight:400;margin:6px 0 0}
-}
+/* v22 hero (mobile and desktop): no logo, no badge; muted line under the text CTA */
+.hero .hero-tagline{display:block;color:#94a3b8;font-size:.8rem;font-weight:400;text-transform:none;letter-spacing:0;margin:6px 0 0}
