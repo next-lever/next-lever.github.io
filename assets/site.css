@@ -191,3 +191,4 @@ footer .flinks a:hover,footer .flinks a:focus{color:#fff}
 .btn-navy{background:#0f172a!important;color:#fff!important;font-size:1.1rem;padding:16px 22px}
 @media(max-width:639px){#booked-form .btn-navy{display:block;width:100%}}
 .booked-done{text-align:center;padding:12px 0}
+#booked-video-section + section{padding-top:0!important}#booked-video-section{padding-bottom:0!important}

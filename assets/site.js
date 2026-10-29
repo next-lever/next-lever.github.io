@@ -126,12 +126,13 @@
   var steps=document.querySelectorAll("#booked-steps li");
   function step(n){[].forEach.call(steps,function(li){li.classList.toggle("on",li.getAttribute("data-step")==String(n));});}
   var v=document.getElementById("booked-vid");
-  if(v){v.addEventListener("ended",function(){step(2);});}
-  f.addEventListener("focusin",function(){step(2);});
+  var done3=false;
+  if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!done3)step(2);});},{threshold:0.15}).observe(f);}
+  else f.addEventListener("focusin",function(){step(2);});
   var st=q.get("start"),en=q.get("end"),d=st?new Date(st):null;
   if(d&&isNaN(d))d=null;
   window.NLBookedDone=function(){
-    f.hidden=true;var done=document.getElementById("booked-done");done.hidden=false;step(3);
+    done3=true;f.hidden=true;var done=document.getElementById("booked-done");done.hidden=false;step(3);
     var cal=document.getElementById("booked-cal");
     if(d){
       document.getElementById("booked-when").textContent=d.toLocaleString(undefined,{weekday:"long",month:"long",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"});
