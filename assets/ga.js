@@ -2,12 +2,9 @@
 (function(){
   var ID = 'G-8DXVSVQ9C3';
   if (!/^G-[A-Z0-9]{6,}$/.test(ID) || ID.indexOf('XXXX') > -1) return;
-  var s = document.createElement('script'); s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
-  document.head.appendChild(s);
+  /* gtag base snippet is inline in each page <head>; this file adds events only */
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function(){ dataLayer.push(arguments); };
-  gtag('js', new Date()); gtag('config', ID);
+  if (!window.gtag) { window.gtag = function(){ dataLayer.push(arguments); }; gtag('js', new Date()); gtag('config', ID); }
   if (/^\/booked(\.html)?\/?$/.test(location.pathname)) gtag('event', 'booked');
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a'); if (!a) return;
