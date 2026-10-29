@@ -43,7 +43,7 @@
 
   // 4. Booked page video slot (placeholder until BOOKED_VIDEO_ID is set)
   var bv = document.getElementById("booked-video");
-  if (bv && C.BOOKED_VIDEO_ID && !isPlaceholder(C.BOOKED_VIDEO_ID)) {
+  if (bv && !bv.dataset.self && C.BOOKED_VIDEO_ID && !isPlaceholder(C.BOOKED_VIDEO_ID)) {
     bv.innerHTML = "";
     var bs = document.getElementById("booked-video-section"); if (bs) bs.hidden = false;
     var bf = document.createElement("iframe");
@@ -104,5 +104,15 @@
     var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});
     b.style.display="none";
     if(window.gtag)gtag("event","video_sound_on");
+  });
+})();
+
+/* Booked page video: plays with sound on tap */
+(function(){
+  var v=document.getElementById("booked-vid"),b=document.getElementById("booked-play");
+  if(!v||!b)return;
+  b.addEventListener("click",function(){
+    v.muted=false;v.currentTime=0;v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){});
+    b.style.display="none";if(window.gtag)gtag("event","booked_video_play");
   });
 })();
