@@ -1,6 +1,6 @@
 /* GA4 for nextleverhq.com. Set the Measurement ID below (G-...). */
 (function(){
-  var ID = 'G-XXXXXXXXXX';
+  var ID = 'G-8DXVSVQ9C3';
   if (!/^G-[A-Z0-9]{6,}$/.test(ID) || ID.indexOf('XXXX') > -1) return;
   var s = document.createElement('script'); s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
