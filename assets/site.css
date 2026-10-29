@@ -166,3 +166,7 @@ footer .flinks a:hover,footer .flinks a:focus{color:#fff}
 @media(min-width:640px){.booked-slot .slot-ph{font-size:1.5rem}}
 /* v22 hero (mobile and desktop): no logo, no badge; muted line under the text CTA */
 .hero .hero-tagline{display:block;color:#94a3b8;font-size:.8rem;font-weight:400;text-transform:none;letter-spacing:0;margin:6px 0 0}
+
+/* v23 self-hosted hero video */
+.vsl-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#020617}
+.sound-btn{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:#F59E0B;color:#0f172a;border:0;border-radius:999px;padding:10px 18px;font:700 .95rem/1 inherit;font-family:inherit;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4)}

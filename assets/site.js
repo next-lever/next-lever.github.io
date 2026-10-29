@@ -5,7 +5,7 @@
 
   // 1. VSL embed (privacy-enhanced youtube-nocookie)
   var v = document.getElementById("vsl");
-  if (v && C.YOUTUBE_VIDEO_ID && !isPlaceholder(C.YOUTUBE_VIDEO_ID)) {
+  if (v && !v.dataset.self && C.YOUTUBE_VIDEO_ID && !isPlaceholder(C.YOUTUBE_VIDEO_ID)) {
     var f = document.createElement("iframe");
     f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(C.YOUTUBE_VIDEO_ID) + "?rel=0&modestbranding=1&playsinline=1";
     f.title = C.VIDEO_TITLE || "Next Lever video";
@@ -93,5 +93,16 @@
           say((err && err.message ? err.message + " " : "") + "Please try again, or text AUDIT to " + (C.TEXT_AUDIT_NUMBER_DISPLAY || "us") + ".", "err");
         });
     });
+  });
+})();
+/* Self-hosted hero video: Tap for sound unmutes and restarts from 0 */
+(function(){
+  var vid=document.getElementById("hero-video"),b=document.getElementById("sound-btn");
+  if(!vid||!b)return;
+  b.addEventListener("click",function(){
+    vid.muted=false;vid.loop=false;vid.currentTime=0;vid.controls=true;
+    var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});
+    b.style.display="none";
+    if(window.gtag)gtag("event","video_sound_on");
   });
 })();
