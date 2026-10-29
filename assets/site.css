@@ -176,3 +176,18 @@ footer .flinks a:hover,footer .flinks a:focus{color:#fff}
 @media(min-width:640px){.vsl-frame[data-self]{height:70vh;width:auto;margin:0 auto;background:#000}}
 .play-btn{top:50%;bottom:auto;transform:translate(-50%,-50%);padding:14px 22px;font-size:1.05rem}
 .booked-slot[data-self]{border:0;outline:0}
+
+/* v25 booked page */
+.booked-sub{color:#cbd5e1;font-size:1rem;margin:10px auto 0;max-width:560px}
+.booked-vsl{margin:0 auto 24px}
+.booked-vsl .vsl-frame[data-self]{margin-bottom:0}
+@media(min-width:640px){.booked-vsl .vsl-frame[data-self]{height:55vh}}
+#booked-video-section{padding-bottom:0}
+#booked-video-section + section{padding-top:24px}
+.steps{list-style:none;padding:0;margin:0 auto 16px;max-width:640px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;font-size:.85rem}
+.steps li{background:#e2e8f0;color:#475569;border-radius:999px;padding:6px 12px}
+.steps li.on{background:#0f172a;color:#fff;font-weight:700}
+.form-head{margin:0 0 12px;font-size:1.3rem}
+.btn-navy{background:#0f172a!important;color:#fff!important;font-size:1.1rem;padding:16px 22px}
+@media(max-width:639px){#booked-form .btn-navy{display:block;width:100%}}
+.booked-done{text-align:center;padding:12px 0}

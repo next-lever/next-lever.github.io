@@ -19,14 +19,16 @@
 <body>
 <main>
 <section class="page-hero"><div class="wrap">
-  <a href="index.html"><img class="logo" src="assets/logo.jpg" alt="Next Lever" width="64" height="64"></a>
   <h1>You're booked. Answer these so I come prepared.</h1>
+  <p class="booked-sub">Takes 5 minutes. Do it now while it's fresh — it's what makes the 15 minutes worth it.</p>
 </div></section>
 <section id="booked-video-section"><div class="wrap wide">
-  <div class="vsl" style="margin-bottom:8px"><div class="vsl-frame booked-slot" id="booked-video" data-self="1"><video id="booked-vid" playsinline preload="metadata" poster="assets/booked-poster.jpg"><source src="assets/booked.mp4" type="video/mp4"></video><button type="button" class="sound-btn play-btn" id="booked-play" aria-label="Tap to play with sound">&#9654; Tap to play with sound</button></div></div>
+  <div class="vsl booked-vsl"><div class="vsl-frame booked-slot" id="booked-video" data-self="1"><video id="booked-vid" playsinline preload="metadata" poster="assets/booked-poster.jpg"><source src="assets/booked.mp4" type="video/mp4"></video><button type="button" class="sound-btn play-btn" id="booked-play" aria-label="Tap to play with sound">&#9654; Tap to play with sound</button></div></div>
 </div></section>
 <section class="alt"><div class="wrap">
-  <div class="formcard" style="margin-top:0">
+  <ol class="steps" id="booked-steps"><li class="on" data-step="1"><span>①</span> Watch (30 sec)</li><li data-step="2"><span>②</span> Answer 6 questions</li><li data-step="3"><span>③</span> Check your inbox for the calendar invite</li></ol>
+  <div class="formcard" style="margin-top:0" id="booked-card">
+    <h2 class="form-head">Your 6 questions</h2>
     <form id="booked-form" name="booked" method="POST" action="https://formspree.io/f/mgaakrpk" accept-charset="UTF-8"
           data-endpoint="FORMSPREE_PREP_URL" data-next="booked-thanks.html" data-subject="Booked answers: {email}" data-subject-field="email">
       <input type="hidden" name="_subject" value="Booked answers">
@@ -44,10 +46,15 @@
         <label for="_gotcha">Leave this field empty</label>
         <input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
       </div>
-      <button class="btn" type="submit">Send my answers</button>
+      <button class="btn btn-navy" type="submit">Send my answers → I'm ready for the call</button>
       <p class="status" role="status" aria-live="polite"></p>
       <p class="legal">Used only to prepare your audit. See our <a href="privacy.html">Privacy Policy</a>.</p>
     </form>
+    <div class="booked-done" id="booked-done" hidden>
+      <h2>Got it.</h2>
+      <p>See you <span id="booked-when">at your scheduled time</span>. You'll get a text reminder 1 hour before.</p>
+      <p><a class="btn btn-navy" id="booked-cal" href="#" target="_blank" rel="noopener">Add to calendar</a></p>
+    </div>
   </div>
 </div></section>
 </main>

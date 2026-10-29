@@ -85,7 +85,7 @@
       say("", "");
       fetch(endpoint, { method: "POST", body: data, headers: { "Accept": "application/json" } })
         .then(function (r) {
-          if (r.ok) { window.location.href = next; return; }
+          if (r.ok) { if (form.id === "booked-form" && window.NLBookedDone) { window.NLBookedDone(); return; } window.location.href = next; return; }
           return r.json().then(function (j) { throw new Error((j && j.errors && j.errors.map(function (x) { return x.message; }).join(", ")) || "Something went wrong."); });
         })
         .catch(function (err) {
@@ -115,4 +115,30 @@
     v.muted=false;v.currentTime=0;v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){});
     b.style.display="none";if(window.gtag)gtag("event","booked_video_play");
   });
+})();
+
+/* Booked page: email prefill, step strip, inline thank-you (only uses what the URL passes) */
+(function(){
+  var f=document.getElementById("booked-form");if(!f)return;
+  var q=new URLSearchParams(location.search);
+  var em=q.get("email")||q.get("invitee_email");var ei=document.getElementById("email");
+  if(em&&ei&&!ei.value)ei.value=em;
+  var steps=document.querySelectorAll("#booked-steps li");
+  function step(n){[].forEach.call(steps,function(li){li.classList.toggle("on",li.getAttribute("data-step")==String(n));});}
+  var v=document.getElementById("booked-vid");
+  if(v){v.addEventListener("ended",function(){step(2);});}
+  f.addEventListener("focusin",function(){step(2);});
+  var st=q.get("start"),en=q.get("end"),d=st?new Date(st):null;
+  if(d&&isNaN(d))d=null;
+  window.NLBookedDone=function(){
+    f.hidden=true;var done=document.getElementById("booked-done");done.hidden=false;step(3);
+    var cal=document.getElementById("booked-cal");
+    if(d){
+      document.getElementById("booked-when").textContent=d.toLocaleString(undefined,{weekday:"long",month:"long",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"});
+      var e2=en?new Date(en):new Date(d.getTime()+15*60000);if(isNaN(e2))e2=new Date(d.getTime()+15*60000);
+      var fmt=function(x){return x.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"");};
+      cal.href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Next Lever 15-minute audit")+"&dates="+fmt(d)+"/"+fmt(e2);
+    } else { cal.parentNode.hidden=true; }
+    done.scrollIntoView({behavior:"smooth",block:"center"});
+  };
 })();
