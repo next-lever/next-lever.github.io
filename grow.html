@@ -8,41 +8,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>More booked jobs. Not more hours. | Next Lever</title>
-<meta name="description" content="Done-for-you growth for service businesses. Book a Free Discovery Call, get a Growth Map, then we build it or you do.">
+<meta name="description" content="Growth for service businesses. Book a Free Discovery Call, get a Growth Map, or join the group.">
 <link rel="canonical" href="https://nextleverhq.com/grow">
 <link rel="icon" href="assets/logo.jpg">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/config.js"></script>
 <script src="/assets/ga.js"></script>
 <style>
-/* Draft-only: the live site.css later overrides .steps for the booked page, so the three how-it-works cards use this class instead. Visuals match the original card steps. */
-.howto{list-style:none;padding:0;display:grid;gap:18px;grid-template-columns:1fr;margin:24px 0 0}
-.howto li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:0;position:relative}
-.howto .ico{display:flex;width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--accent);align-items:center;justify-content:center;margin-bottom:10px}
-.howto .num{font-weight:800;color:#B45309;font-size:.9rem;letter-spacing:.05em;margin-bottom:6px}
-@media(min-width:760px){
-  .howto{grid-template-columns:repeat(3,1fr)}
-  .howto li:not(:last-child):after{content:"";position:absolute;top:44px;right:-19px;width:20px;height:2px;background:var(--accent)}
-}
 .cta-block{text-align:center}
 .cta-block .btn{margin:8px 0 0}
-.group-link{margin:16px 0 0;font-size:.95rem}
+.group-link{margin:8px 0 0;font-size:.95rem;color:var(--muted,#64748b)}
 .group-link a{color:inherit;font-weight:700}
 #audit{margin-top:28px;text-align:left}
-.hero-head{display:flex;flex-direction:column;align-items:center;gap:16px}
+.hero-head{display:flex;flex-direction:column;align-items:center}
 .hero-head h1{margin:0}
-.hero-photo{flex:0 0 auto;width:112px;height:112px;border-radius:50%;overflow:hidden;border:3px solid #F59E0B;background:#1e293b}
-.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.grow-vsl{margin:6px auto 18px;width:100%;max-width:380px}
+.grow-vsl{margin:14px auto 0;width:100%;max-width:380px}
 .grow-vsl .vsl-frame{aspect-ratio:9/16;border-radius:12px;background:#020617}
 .grow-vsl .vsl-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#020617}
-.hero-cta{margin:0 auto}
-.cta-sub{margin:12px auto 0;max-width:560px;font-size:15px;color:#cbd5e1;text-align:center}
-@media(min-width:640px){.hero-head{flex-direction:row;justify-content:center;gap:28px;text-align:left}.hero-photo{width:150px;height:150px}}
+.hero-cta{margin:4px auto 0}
+.cta-sub{margin:8px auto 0;max-width:560px;font-size:14px;color:#cbd5e1;text-align:center}
 video.poster-play{cursor:pointer}
-.hiw-video{max-width:760px;margin:28px auto 0}
-.hiw-cta{text-align:center;margin:24px auto 0}
-.hiw-video video{display:block;width:100%;height:auto;border-radius:12px;background:#020617;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.ladder-wrap{padding-top:8px}
+.ladder{list-style:none;padding:0;margin:0;display:grid;gap:18px;grid-template-columns:1fr}
+.ladder li{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:22px 20px;margin:0;display:flex;flex-direction:column}
+.ladder li.primary{box-shadow:0 8px 24px rgba(15,23,42,.10)}
+.ladder .rung{font-weight:800;color:#B45309;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px}
+.ladder h2{margin:0 0 10px;font-size:1.35rem}
+.ladder p{margin:0 0 10px}
+.ladder .btn{margin-top:auto}
+.ladder-note{text-align:center;margin:22px auto 0;max-width:640px;font-weight:600}
+@media(max-width:760px){
+  .hero{padding:12px 0 16px!important}
+  .vsl-line{margin:10px auto 8px}
+  .cta-sub{margin:6px auto 0}
+  .grow-vsl{margin:8px auto 0;width:auto;max-width:100%;display:flex;justify-content:center}
+  .grow-vsl .vsl-frame{width:auto;height:56vh;max-height:56vh;max-width:100%;aspect-ratio:9/16;margin:0 auto}
+  .grow-vsl .vsl-frame video{object-fit:cover}
+}
+@media(min-width:760px){.ladder{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+@media(min-width:900px){
+  .hero-intro{display:grid;grid-template-columns:minmax(280px,1fr) 360px;column-gap:56px;align-items:center;text-align:left}
+  .hero-copy{max-width:560px}
+  .hero-head{align-items:flex-start}
+  .hero-head h1{text-align:left}
+  .vsl-line{margin:14px 0 18px;text-align:left}
+  .hero-cta{margin:0}
+  .cta-sub{margin:10px 0 0;text-align:left}
+  .grow-vsl{margin:0;max-width:360px}
+}
 </style>
 </head>
 <body>
@@ -52,20 +65,50 @@ video.poster-play{cursor:pointer}
 <section class="hero">
   <div class="wrap wide vsl-top">
     <div class="hero-intro">
+      <div class="hero-copy">
       <div class="hero-head">
-        <div class="hero-photo"><picture><source srcset="assets/founder.webp" type="image/webp"><img src="assets/founder.jpg" alt="Michael Reichlen, founder of Next Lever" width="400" height="400"></picture></div>
         <h1>More booked jobs.<br>Not more hours.</h1>
       </div>
-      <p class="vsl-line">Growth advisor for service businesses. I find the one thing holding you back, then build the fix.</p>
-      <div class="vsl grow-vsl"><div class="vsl-frame"><video class="poster-play" tabindex="0" playsinline preload="none" poster="assets/grow-vsl-v2-poster.jpg" width="720" height="1280" aria-label="More booked jobs, not more hours. 1-minute 39-second video with captions"><source src="assets/grow-vsl-v2-9x16.mp4" type="video/mp4"></video></div></div>
+      <p class="vsl-line">Growth advisor for service businesses. I find the one thing holding you back, then map the exact fix to turn on.</p>
       <a class="btn hero-cta" href="#audit">Book a free discovery call</a>
-      <p class="cta-sub">15 minutes. You leave with your Gap Note — the one thing I'd fix first, in writing.</p>
+      <p class="cta-sub">20 min · you leave with your Gap Note</p>
+      </div>
+      <div class="vsl grow-vsl"><div class="vsl-frame"><video class="poster-play" tabindex="0" playsinline preload="none" poster="assets/grow-vsl-v2-poster.jpg?v=3" width="720" height="1280" aria-label="More booked jobs, not more hours. 1-minute 39-second video with captions"><source src="assets/grow-vsl-v2-9x16.mp4" type="video/mp4"></video></div></div>
     </div>
   </div>
 </section>
 
-<!-- 2. Who it's for -->
-<section class="alt">
+
+<!-- 2. Ladder offer blocks (t115u) -->
+<section class="alt ladder-wrap" id="offers">
+  <div class="wrap wide">
+    <ul class="ladder">
+      <li class="primary">
+        <div class="rung">The Call</div>
+        <h2>20 minutes. One gap, in writing.</h2>
+        <p>Tell me how work comes in and where it stalls. No prep needed. You leave with your Gap Note — what's costing you and what I'd fix first. Free.</p>
+        <a class="btn" href="#audit">Book the call</a>
+      </li>
+      <li>
+        <div class="rung">The Map</div>
+        <h2>The whole business, mapped.</h2>
+        <p>45 minutes + a written Growth Map next business day. Month 1 of the group included.</p>
+        <a class="btn" href="#audit">Ask about the map (on the call)</a>
+      </li>
+      <li id="join-the-group">
+        <div class="rung">The Group</div>
+        <h2>A room with me in it every week.</h2>
+        <p>Weekly live Q&amp;A, your Gap Note in 48 hrs, setup guides for tools you already pay for. $50/mo — first 25 locked for life.</p>
+        <!-- swap to live group URL when ready -->
+        <a class="btn" href="#booking-form">Join the group</a>
+      </li>
+    </ul>
+    <p class="ladder-note">Next 4-week cohort opens January. Map buyers get $500 off.</p>
+  </div>
+</section>
+
+<!-- 3. Who it's for -->
+<section>
   <div class="wrap week">
     <h2>Who this is for</h2>
     <p>Service businesses that run on an inbox and a good memory.</p>
@@ -73,37 +116,11 @@ video.poster-play{cursor:pointer}
     <ul class="pains">
       <li><span class="nic">Bookkeeping / tax</span>"I spend my nights chasing clients for documents."</li>
       <li><span class="nic">Marketing agency</span>"Every client report eats a whole afternoon."</li>
-      <li><span class="nic">Coaching / consulting</span>"Discovery calls end and nobody follows up."</li>
-      <li><span class="nic">Recruiting</span>"Good candidates go cold while I'm buried in scheduling."</li>
+      <li><span class="nic">Home services / trades</span>"Quotes go out and nobody follows up until they've hired someone else."</li>
+      <li><span class="nic">Contractors / field service</span>"Missed calls while we're on a job turn into dead leads."</li>
       <li><span class="nic">Property management</span>"Tenant requests pile up in my inbox faster than I can answer."</li>
       <li><span class="nic">Real estate</span>"Leads text at 9pm and by morning they've signed with someone else."</li>
     </ul>
-  </div>
-</section>
-
-<!-- 3. How it works -->
-<section>
-  <div class="wrap wide">
-    <h2 class="center">How it works</h2>
-    <ol class="howto">
-      <li>
-        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10" cy="10" r="6"/><path d="M15 15l5 5"/></svg></span>
-        <div class="num">1</div>
-        <strong>A Free Discovery Call.</strong> You tell us how work comes in and where it stalls. No prep needed. 15 minutes. You leave with your Gap Note — the one thing I'd fix first, in writing.
-      </li>
-      <li>
-        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5a4 4 0 0 0 5 5l-9 9a2 2 0 0 1-3-3l9-9a4 4 0 0 1-2-2z"/></svg></span>
-        <div class="num">2</div>
-        <strong>A Growth Map.</strong> You leave with a clear picture of what's holding booked jobs back, and what to do first.
-      </li>
-      <li>
-        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-14 5.3M4 20v-4h4"/></svg></span>
-        <div class="num">3</div>
-        <strong>We build it, or you do.</strong> You choose. We can build it with you, or you can run the map yourself.
-      </li>
-    </ol>
-    <div class="hiw-video"><video class="poster-play" tabindex="0" playsinline preload="none" poster="assets/how-it-works-v3-poster.jpg" width="1920" height="1080" aria-label="How it works, 23-second video with captions"><source src="assets/how-it-works-v3.mp4" type="video/mp4"></video></div>
-    <div class="hiw-cta"><a class="btn" href="#audit">Book a free discovery call</a></div>
   </div>
 </section>
 
@@ -117,17 +134,17 @@ video.poster-play{cursor:pointer}
       <p style="margin:0 0 10px">Now I do that as a growth advisor for service businesses. Same playbook, your numbers.</p>
       <p class="attr">— Michael Reichlen, Founder</p>
     </div></div>
-    <blockquote style="margin-top:28px">If we aren't live and fixing the constraint we agreed on within 45 days of getting your access and answers, we keep working for free until we are.</blockquote>
+    <blockquote style="margin-top:28px">No pitch-fest. You leave the 20-minute call with your written Gap Note — the exact bottleneck costing you booked jobs and what to turn on first, whether we work together or not.</blockquote>
   </div>
 </section>
 
 <!-- 5. CTA -->
-<section>
+<section id="booking-form">
   <div class="wrap cta-block">
     <h2>Book a Free Discovery Call</h2>
-    <p>15 minutes. You leave with your Gap Note — the one thing I'd fix first, in writing.</p>
-    <a class="btn" href="#audit">Book a free discovery call</a>
-    <!-- PLACEHOLDER: "Join the free group" link goes here once the group exists (on hold per Michael t572u) -->
+    <p>20 minutes. You leave with your Gap Note — the one thing I'd fix first, in writing.</p>
+    <!-- swap to live group URL when ready -->
+    <p class="group-link">Prefer to start in the room? <a href="#booking-form">Join the group ($50/mo)</a></p>
 
     <div id="audit">
     <div class="stepper" aria-label="Two steps"><span class="on">Step 1: tell me where to look</span><span class="off">Step 2: pick a time</span></div>
@@ -146,7 +163,7 @@ video.poster-play{cursor:pointer}
 
       <div class="field"><label for="industry">Industry</label><select id="industry" name="industry" required>
         <option value="" selected disabled>Choose one</option>
-        <option>Lending</option><option>Bookkeeping / tax</option><option>Marketing agency</option><option>Coaching / consulting</option><option>Recruiting</option><option>Property management</option><option>Real estate</option><option>Car service</option><option>Other</option>
+        <option>Lending</option><option>Bookkeeping / tax</option><option>Marketing agency</option><option>Home services / trades</option><option>Contractors / field service</option><option>Property management</option><option>Real estate</option><option>Car service</option><option>Other</option>
       </select></div>
 
       <div class="hp" aria-hidden="true">
